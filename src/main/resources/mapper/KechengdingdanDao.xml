@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.KechengdingdanDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.KechengdingdanEntity" id="kechengdingdanMap">
+        <result property="kechengbianhao" column="kechengbianhao"/>
+        <result property="jianshenkecheng" column="jianshenkecheng"/>
+        <result property="jiaoliangonghao" column="jiaoliangonghao"/>
+        <result property="jiaolianxingming" column="jiaolianxingming"/>
+        <result property="shangkedidian" column="shangkedidian"/>
+        <result property="fengmian" column="fengmian"/>
+        <result property="keshi" column="keshi"/>
+        <result property="kechengfeiyong" column="kechengfeiyong"/>
+        <result property="yonghuming" column="yonghuming"/>
+        <result property="xingming" column="xingming"/>
+        <result property="shoujihao" column="shoujihao"/>
+        <result property="goumaishijian" column="goumaishijian"/>
+        <result property="ispay" column="ispay"/>
+        <result property="thumbsupnum" column="thumbsupnum"/>
+        <result property="crazilynum" column="crazilynum"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.KechengdingdanVO" >
+		SELECT * FROM kechengdingdan  kechengdingdan         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.KechengdingdanVO" >
+		SELECT  kechengdingdan.* FROM kechengdingdan  kechengdingdan 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.KechengdingdanView" >
+
+		SELECT  kechengdingdan.* FROM kechengdingdan  kechengdingdan 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.KechengdingdanView" >
+		SELECT * FROM kechengdingdan  kechengdingdan <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
